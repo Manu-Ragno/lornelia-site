@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="google-site-verification" content="5lgimxPhCLRnVox_J6An_nKT2Z4BkMgD2hUzPrJ5eHU" />
+
+    <title>Traiteur L'Ornelia | Cuisine Franco-Italienne | Hainin & Mons</title>
+    <meta name="description" content="L'Ornelia Traiteur à Hainin (près de Mons). Manuel Ragno vous propose une cuisine gastronomique pour mariages, anniversaires et chef à domicile dans tout le Hainaut.">
+    <meta name="keywords" content="traiteur mons, traiteur hainaut, traiteur hainin, chef à domicile, mariage, cuisine italienne, buffet, repas entreprise, Manuel Ragno">
+    <meta name="author" content="Manuel Ragno">
+    
+    <meta property="og:title" content="L'Ornelia - Traiteur d'Exception">
+    <meta property="og:description" content="Découvrez une cuisine passionnée et locale. Mariages, Chef à domicile & Événements.">
+    <meta property="og:image" content="https://lornelia-traiteur.be/images/image001.jpg">
+    <meta property="og:url" content="https://www.lornelia-traiteur.be/">
+    <meta property="og:type" content="website">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        /* --- CHARTE GRAPHIQUE (Retour au style Classique) --- */
+        :root {
+            --bleu-nuit: #1a1e26;
+            --dore: #C5A065;
+            --blanc: #ffffff;
+            --gris-clair: #f9f9f9;
+            --gris-texte: #4a4a4a;
+        }
+
+        html { scroll-behavior: smooth; overflow-x: hidden; }
+
+        body {
+            margin: 0; padding: 0;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            color: var(--gris-texte);
+            line-height: 1.8;
+            background-color: var(--gris-clair);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 { font-family: 'Garamond', 'Times New Roman', serif; color: var(--bleu-nuit); }
+
+        /* --- NAVIGATION --- */
+        header {
+            background-color: var(--bleu-nuit);
+            padding: 0.5rem 0;
+            position: sticky; top: 0; z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        nav { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
+        .logo-nav img { height: 50px; width: auto; transition: transform 0.3s; }
+        .logo-nav img:hover { transform: rotate(-5deg); }
+        .nav-links { list-style: none; display: flex; gap: 30px; }
+        .nav-links a { color: var(--blanc); text-decoration: none; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s; position: relative; }
+        .nav-links a::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -5px; left: 0; background-color: var(--dore); transition: width 0.3s; }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-links a:hover { color: var(--dore); }
+        .cta-btn-menu { background-color: var(--dore); padding: 10px 25px; border-radius: 30px; color: var(--blanc) !important; font-weight: bold; transition: transform 0.3s, background 0.3s; }
+        .cta-btn-menu:hover { background-color: #b08d55; transform: scale(1.05); }
+
+        /* --- HERO (SECTION PRINCIPALE) --- */
+        .hero {
+            background-image: url('images/image001.jpg');
+            background-size: cover; background-position: center;
+            height: 90vh;
+            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
+            position: relative; color: var(--blanc);
+            background-attachment: fixed;
+        }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.6); }
+        .hero-content { z-index: 2; width: 100%; padding: 0 20px; }
+        .logo-accueil { max-width: 550px; width: 80%; height: auto; margin-bottom: 20px; filter: drop-shadow(0 5px 15px rgba(0,0,0,0.5)); }
+        .hero p { font-size: 1.5rem; margin-bottom: 40px; font-style: italic; font-family: 'Garamond', serif; letter-spacing: 1px; }
+        .btn-gold { background-color: var(--dore); color: var(--blanc); padding: 18px 50px; text-decoration: none; font-size: 1.1rem; border-radius: 50px; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; transition: transform 0.3s; display: inline-block; }
+        .btn-gold:hover { transform: translateY(-5px); background-color: #b08d55; }
+
+        /* --- SECTIONS GÉNÉRALES --- */
+        .section { padding: 80px 20px; max-width: 1200px; margin: 0 auto; text-align: center; }
+        .section-title { font-size: 2.5rem; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px; }
+        .divider { width: 80px; height: 3px; background-color: var(--dore); margin: 0 auto 40px; }
+        .text-block { font-size: 1.1rem; margin-bottom: 40px; max-width: 900px; margin-left: auto; margin-right: auto; }
+        .chef-signature { font-family: 'Garamond', serif; font-style: italic; font-size: 1.8rem; color: var(--dore); margin-top: 20px; }
+
+        /* --- SERVICES (GRID) --- */
+        .services-section { background-color: var(--blanc); }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px; 
+            margin-top: 50px;
+        }
+
+        /* --- FLIP CARDS (Cartes qui se retournent) --- */
+        .flip-card { background-color: transparent; height: 260px; perspective: 1000px; cursor: pointer; }
+        .flip-card-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.8s; transform-style: preserve-3d; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .flip-card:hover .flip-card-inner { transform: rotateY(180deg); }
+        .flip-card-front, .flip-card-back { position: absolute; width: 100%; height: 100%; -webkit-backface-visibility: hidden; backface-visibility: hidden; border-radius: 10px; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 20px; box-sizing: border-box; border: 1px solid #eee; }
+        .flip-card-front { background-color: var(--gris-clair); color: black; }
+        .flip-card-front h3 { font-family: 'Garamond', serif; font-size: 1.4rem; margin-top: 15px; color: var(--bleu-nuit); }
+        .flip-card-front .icon-service { font-size: 3rem; color: var(--dore); }
+        .flip-card-back { background-color: var(--bleu-nuit); color: var(--blanc); transform: rotateY(180deg); border: 2px solid var(--dore); }
+        .flip-card-back p { font-size: 0.95rem; line-height: 1.5; color: #eee; }
+        .flip-card-back h3 { color: var(--dore); margin-bottom: 10px; font-size: 1.3rem;}
+
+        /* --- GALERIE --- */
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .gallery-item { overflow: hidden; border-radius: 5px; }
+        .gallery-item img { width: 100%; height: 280px; object-fit: cover; transition: transform 0.8s; cursor: pointer; }
+        .gallery-item img:hover { transform: scale(1.1); filter: brightness(1.1); }
+
+        /* --- CONTACT --- */
+        .contact-container { background: var(--blanc); padding: 50px; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); max-width: 800px; margin: 0 auto; text-align: left; }
+        .form-row { display: flex; gap: 20px; margin-bottom: 20px; }
+        .col { flex: 1; }
+        label { display: block; margin-bottom: 8px; font-weight: bold; font-size: 0.9rem; color: var(--bleu-nuit); }
+        input, select, textarea { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; background: #fcfcfc; font-family: inherit; box-sizing: border-box; transition: 0.3s; }
+        input:focus, select:focus, textarea:focus { outline: none; border-color: var(--dore); background: #fff; box-shadow: 0 0 8px rgba(197, 160, 101, 0.2); }
+        button[type="submit"] { width: 100%; background: var(--bleu-nuit); color: var(--blanc); padding: 15px; border: none; font-size: 1.1rem; font-weight: bold; border-radius: 5px; cursor: pointer; transition: 0.3s; }
+        button[type="submit"]:hover { background: var(--dore); transform: scale(1.02); }
+
+        /* --- FOOTER --- */
+        footer { background-color: var(--bleu-nuit); color: var(--gris-clair); padding: 60px 20px; margin-top: 60px; text-align: center; }
+        .footer-info a { color: var(--blanc); text-decoration: none; transition: color 0.3s; }
+        .footer-info a:hover { color: var(--dore); }
+        .social-link { font-size: 2.5rem; color: var(--dore); text-decoration: none; transition: transform 0.3s, color 0.3s; display: inline-block; margin-top: 10px; }
+        .social-link:hover { color: var(--blanc); transform: scale(1.2) rotate(10deg); }
+        .copyright { margin-top: 40px; font-size: 0.8rem; opacity: 0.6; }
+
+        /* --- RESPONSIVE (Tablettes & Mobiles) --- */
+        @media (max-width: 1024px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 768px) {
+            .nav-links { display: none; } nav { justify-content: center; }
+            .form-row { flex-direction: column; gap: 0; }
+            .hero p { font-size: 1.2rem; }
+            .chef-signature { font-size: 1.5rem; }
+            .hero { background-attachment: scroll; }
+            .services-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="#" class="logo-nav"><img src="images/logocourt-transparent.png" alt="L'Ornelia"></a>
+            <ul class="nav-links">
+                <li><a href="#chef">Le Chef</a></li>
+                <li><a href="#services">Prestations</a></li>
+                <li><a href="#galerie">Galerie</a></li>
+                <li><a href="#contact" class="cta-btn-menu">Devis</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content" data-aos="zoom-in" data-aos-duration="1500">
+            <img src="images/logolong-transparent.png" alt="L'Ornelia Traiteur" class="logo-accueil">
+            <p data-aos="fade-up" data-aos-delay="500">Inspiration Franco-Italienne & Passion Gastronomique</p>
+            <a href="#contact" class="btn-gold" data-aos="fade-up" data-aos-delay="800">Demander un Devis</a>
+        </div>
+    </section>
+
+    <section id="chef" class="section">
+        <div data-aos="fade-up">
+            <h2 class="section-title">Manuel Ragno, Le Chef</h2>
+            <div class="divider"></div>
+        </div>
+        <div class="text-block" data-aos="fade-up" data-aos-delay="200">
+            <p>Derrière L'Ornelia se cache un parcours atypique et une passion authentique. Après une reconversion initiée en 2013, <strong>Manuel Ragno</strong> a fait ses armes auprès de traiteurs événementiels, de restaurants traditionnels et dans le monde de la gastronomie étoilée, affinant sa technique et son palais.</p>
+            <br>
+            <p>Une passion pour la cuisine révélée sur le tard, mais sans doute héritée d'une enfance bercée par les parfums d'une grand-mère italienne, entre polenta, pâtes fraîches, ragù et risotto. Aujourd'hui, Manuel sublime cette <strong>fusion franco-italienne</strong>, avec un amour particulier pour le travail des sauces et du salé... tout en relevant avec brio le défi de la pâtisserie.</p>
+        </div>
+        <div class="chef-signature" data-aos="zoom-in" data-aos-delay="400">"Technique, Émotion et Authenticité."</div>
+    </section>
+
+    <section id="services" class="section services-section">
+        <h2 class="section-title" data-aos="fade-down">Nos Prestations</h2>
+        <div class="divider"></div>
+        <p style="margin-bottom: 40px; font-size: 1.1rem; max-width: 800px; margin-left: auto; margin-right: auto;" data-aos="fade-in">
+            Basés à Hainin, nous sillonnons tout le Hainaut (et au-delà !) pour sublimer vos moments. 
+            Une question sur la distance ? N'hésitez pas à nous contacter, nous nous déplaçons avec plaisir.
+        </p>
+        <div class="services-grid">
+            <div class="flip-card" data-aos="flip-up">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front"><div class="icon-service"><i class="fas fa-utensils"></i></div><h3>Menus Week-end</h3></div>
+                    <div class="flip-card-back"><h3>Menus Week-end</h3><p>Découvrez chaque semaine des créations à l’influence franco-italienne raffinée, préparées avec des produits frais.</p></div>
+                </div>
+            </div>
+            <div class="flip-card" data-aos="flip-up" data-aos-delay="100">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front"><div class="icon-service"><i class="fas fa-star"></i></div><h3>Chef à Domicile</h3></div>
+                    <div class="flip-card-back"><h3>Chef à Domicile</h3><p>Le confort du restaurant dans votre salon. Nous cuisinons chez vous pour un moment convivial et sur mesure.</p></div>
+                </div>
+            </div>
+            <div class="flip-card" data-aos="flip-up" data-aos-delay="200">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front"><div class="icon-service"><i class="fas fa-wine-glass"></i></div><h3>Accords Mets & Vins</h3></div>
+                    <div class="flip-card-back"><h3>Accords Mets & Vins</h3><p>Une expérience sensorielle unique, guidée par un sommelier expérimenté pour une harmonie parfaite.</p></div>
+                </div>
+            </div>
+            <div class="flip-card" data-aos="flip-up" data-aos-delay="300">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front"><div class="icon-service"><i class="fas fa-glass-cheers"></i></div><h3>Événements</h3></div>
+                    <div class="flip-card-back"><h3>Événements</h3><p>Mariages, communions, anniversaires ou fêtes d'entreprise. Un menu qui raconte votre histoire.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="galerie" class="section">
+        <h2 class="section-title" data-aos="fade-up">Nos Créations</h2>
+        <div class="divider"></div>
+        <div class="gallery-grid">
+            <div class="gallery-item" data-aos="fade-up"><img src="images/image002.jpg" alt="Création"></div>
+            <div class="gallery-item" data-aos="fade-up" data-aos-delay="100"><img src="images/image003.jpg" alt="Création"></div>
+            <div class="gallery-item" data-aos="fade-up" data-aos-delay="200"><img src="images/image004.jpg" alt="Création"></div>
+            <div class="gallery-item" data-aos="fade-up"><img src="images/image005.jpg" alt="Création"></div>
+            <div class="gallery-item" data-aos="fade-up" data-aos-delay="100"><img src="images/image006.jpg" alt="Création"></div>
+            <div class="gallery-item" data-aos="fade-up" data-aos-delay="200"><img src="images/image007.jpg" alt="Création"></div>
+            <div class="gallery-item" data-aos="fade-up"><img src="images/image008.jpg" alt="Création"></div>
+            <div class="gallery-item" data-aos="fade-up" data-aos-delay="100"><img src="images/image009.jpg" alt="Création"></div>
+            <div class="gallery-item" data-aos="fade-up" data-aos-delay="200"><img src="images/image010.jpg" alt="Création"></div>
+            <div class="gallery-item" data-aos="fade-up"><img src="images/image011.jpg" alt="Création"></div>
+            <div class="gallery-item" data-aos="fade-up" data-aos-delay="100"><img src="images/image012.jpg" alt="Création"></div>
+            <div class="gallery-item" data-aos="fade-up" data-aos-delay="200"><img src="images/image013.jpg" alt="Création"></div>
+        </div>
+    </section>
+
+    <section class="section" style="background-color: #f9f9f9; padding-bottom: 20px;">
+        <h2 class="section-title" data-aos="fade-down">Suivez nos aventures</h2>
+        <div class="divider"></div>
+        <p style="margin-bottom: 30px;">Retrouvez nos dernières réalisations sur Facebook</p>
+
+        <script src="https://elfsightcdn.com/platform.js" async></script>
+        <div class="elfsight-app-29013a0c-9fd6-4f59-909d-a8aeff643c2a" data-elfsight-app-lazy></div>
+    </section>
+
+   <section id="contact" class="section" style="background-color: #f0f0f0;">
+        <h2 class="section-title" data-aos="fade-down">Contact & Devis</h2>
+        <div class="divider"></div>
+        <p style="margin-bottom: 30px; font-size: 1.1rem;">Aidez-nous à mieux comprendre votre besoin pour un devis précis.</p>
+        
+        <div class="contact-container" data-aos="zoom-in-up">
+            <form action="https://formsubmit.co/lornelia.traiteur@gmail.com" method="POST" id="devis-form">
+                
+                <input type="hidden" name="_next" value="https://www.lornelia-traiteur.be/merci.html">
+                <input type="hidden" name="_subject" value="NOUVEAU DEVIS - Site L'Ornelia !">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table"> 
+
+                <h3 style="color: var(--dore); border-bottom: 1px solid #ddd; padding-bottom: 5px; margin-bottom: 15px; font-size: 1.4rem;">1. Vos Coordonnées</h3>
+                <div class="form-row">
+                    <div class="col"><label for="nom">Nom & Prénom *</label><input type="text" id="nom" name="Nom" required></div>
+                    <div class="col"><label for="tel">Téléphone *</label><input type="tel" id="tel" name="Telephone" required></div>
+                </div>
+                <div class="form-row">
+                    <div class="col"><label for="email">Email *</label><input type="email" id="email" name="Email" required></div>
+                </div>
+
+                <h3 style="color: var(--dore); border-bottom: 1px solid #ddd; padding-bottom: 5px; margin-bottom: 15px; margin-top: 35px; font-size: 1.4rem;">2. Votre Événement</h3>
+                <div class="form-row">
+                    <div class="col">
+                        <label for="type">Type d'événement *</label>
+                        <select id="type" name="Type_Evenement" required>
+                            <option value="">Sélectionnez...</option>
+                            <option>Mariage</option>
+                            <option>Anniversaire / Baptême / Fête de famille</option>
+                            <option>Repas d'entreprise / Séminaire</option>
+                            <option>Repas privé / Chef à domicile</option>
+                            <option>Accords Mets & Vins</option>
+                            <option>Autre</option>
+                        </select>
+                    </div>
+                    <div class="col"><label>Date prévue *</label><input type="date" name="Date" required></div>
+                    <div class="col">
+                        <label>Moment *</label>
+                        <select name="Moment" required>
+                            <option value="">Sélectionnez...</option>
+                            <option>Midi</option>
+                            <option>Soir</option>
+                            <option>Journée complète</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col"><label>Lieu & Code Postal *</label><input type="text" name="Lieu" placeholder="Ex: Mons (7000)" required></div>
+                    <div class="col"><label>Nb Adultes *</label><input type="number" name="Nb_Adultes" min="1" required></div>
+                    <div class="col"><label>Nb Enfants</label><input type="number" name="Nb_Enfants" min="0" value="0"></div>
+                </div>
+
+                <h3 style="color: var(--dore); border-bottom: 1px solid #ddd; padding-bottom: 5px; margin-bottom: 15px; margin-top: 35px; font-size: 1.4rem;">3. Logistique sur place</h3>
+                <div class="form-row">
+                    <div class="col">
+                        <label>Cuisine disponible ? *</label>
+                        <select name="Cuisine_Dispo" required>
+                            <option value="">Sélectionnez...</option>
+                            <option>Oui, cuisine équipée</option>
+                            <option>Non, pas de cuisine</option>
+                            <option>À vérifier avec la salle</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <label>Service souhaité ? *</label>
+                        <select name="Service" required>
+                            <option value="">Sélectionnez...</option>
+                            <option>Assuré par L'Ornelia</option>
+                            <option>Assuré par vos soins</option>
+                            <option>Je n'ai besoin que de la livraison</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                        <label>Vaisselle de la salle ?</label>
+                        <select name="Vaisselle_Salle">
+                            <option>Oui (Déjà sur place)</option>
+                            <option>Non (À prévoir)</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <label>Nappage de la salle ?</label>
+                        <select name="Nappage_Salle">
+                            <option>Oui (Déjà sur place)</option>
+                            <option>Non (À prévoir)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <h3 style="color: var(--dore); border-bottom: 1px solid #ddd; padding-bottom: 5px; margin-bottom: 15px; margin-top: 35px; font-size: 1.4rem;">4. La Prestation Gastronomique</h3>
+                
+                <label style="margin-bottom: 15px; display: block;">Formule(s) souhaitée(s) *</label>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; margin-bottom: 25px;">
+                    <label style="display: flex; align-items: center; font-weight: normal; cursor: pointer; text-align: left;">
+                        <input type="checkbox" name="Formule_Buffet_Froid" value="Oui" style="width: 20px; height: 20px; margin: 0 10px 0 0; padding: 0; box-shadow: none;"> Buffet froid
+                    </label>
+                    <label style="display: flex; align-items: center; font-weight: normal; cursor: pointer; text-align: left;">
+                        <input type="checkbox" name="Formule_Buffet_Chaud" value="Oui" style="width: 20px; height: 20px; margin: 0 10px 0 0; padding: 0; box-shadow: none;"> Buffet chaud
+                    </label>
+                    <label style="display: flex; align-items: center; font-weight: normal; cursor: pointer; text-align: left;">
+                        <input type="checkbox" name="Formule_Menu_Rechauffer" value="Oui" style="width: 20px; height: 20px; margin: 0 10px 0 0; padding: 0; box-shadow: none;"> Menu à réchauffer & dresser
+                    </label>
+                    <label style="display: flex; align-items: center; font-weight: normal; cursor: pointer; text-align: left;">
+                        <input type="checkbox" name="Formule_Cocktail" value="Oui" style="width: 20px; height: 20px; margin: 0 10px 0 0; padding: 0; box-shadow: none;"> Cocktail / Zakouskis
+                    </label>
+                    <label style="display: flex; align-items: center; font-weight: normal; cursor: pointer; text-align: left;">
+                        <input type="checkbox" name="Formule_Chef_Domicile" value="Oui" style="width: 20px; height: 20px; margin: 0 10px 0 0; padding: 0; box-shadow: none;"> Chef à domicile
+                    </label>
+                    
+                    <label style="display: flex; align-items: center; font-weight: normal; cursor: pointer; text-align: left; grid-column: 1 / -1;">
+                        <input type="checkbox" id="checkbox_autre" name="Formule_Autre" value="Oui" style="width: 20px; height: 20px; margin: 0 10px 0 0; padding: 0; box-shadow: none;"> Autre (Précisez ci-dessous)
+                    </label>
+                </div>
+                <input type="text" id="champ_autre_precision" name="Precision_Formule_Autre" placeholder="Précisez votre formule..." style="display: none; margin-bottom: 20px;">
+
+                <div class="form-row">
+                    <div class="col">
+                        <label>Budget approximatif par personne *</label>
+                        <select name="Budget_Par_Personne" required>
+                            <option value="">Sélectionnez une fourchette...</option>
+                            <option>Moins de 30 €</option>
+                            <option>30 € - 40 €</option>
+                            <option>40 € - 50 €</option>
+                            <option>50 € - 65 €</option>
+                            <option>Plus de 65 €</option>
+                        </select>
+                    </div>
+                </div>
+
+                <label>Allergies & Restrictions alimentaires</label>
+                <textarea name="Allergies" rows="2" placeholder="Ex: 2 végétariens, 1 intolérance au gluten..."></textarea>
+
+                <label>Un petit mot en plus ? (Vos envies, thème, etc.)</label>
+                <textarea name="Message_Supplementaire" rows="4" placeholder="Dites-nous tout !"></textarea>
+
+                <button type="submit" style="margin-top: 20px; text-transform: uppercase; letter-spacing: 1px;">Envoyer ma demande de devis</button>
+            </form>
+        </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const checkboxAutre = document.getElementById('checkbox_autre');
+                const champPrecision = document.getElementById('champ_autre_precision');
+
+                checkboxAutre.addEventListener('change', function() {
+                    if (this.checked) {
+                        champPrecision.style.display = 'block';
+                        champPrecision.setAttribute('required', 'required');
+                        champPrecision.focus();
+                    } else {
+                        champPrecision.style.display = 'none';
+                        champPrecision.removeAttribute('required');
+                        champPrecision.value = ''; 
+                    }
+                });
+            });
+        </script>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <img src="images/logolong-transparent.png" alt="L'Ornelia" style="height: 70px; opacity: 0.9; margin-bottom: 25px; filter: brightness(0) invert(1);">
+            <div class="footer-info">
+                <p style="font-size: 1.2rem; color: var(--dore); margin-bottom: 15px;"><strong>Manuel Ragno</strong></p>
+                <p>Rue d'Hainin 65, 7350 HAININ (Belgique)</p>
+                <p>Téléphone : <a href="tel:0474920720">0474 920 720</a></p>
+                <p>Email : <a href="mailto:lornelia.traiteur@gmail.com">lornelia.traiteur@gmail.com</a></p>
+            </div>
+            <div>
+                <a href="https://www.facebook.com/lOrneliaTraiteur" target="_blank" class="social-link" title="Suivez-nous sur Facebook">
+                    <i class="fab fa-facebook"></i>
+                </a>
+            </div>
+            <p class="copyright">&copy; 2026 L'Ornelia Traiteur. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ once: true, offset: 100, duration: 800 });
+    </script>
+
+</body>
+</html>
